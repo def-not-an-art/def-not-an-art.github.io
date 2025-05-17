@@ -30,4 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.textContent = 'Open Menu';
         });
     });
+    
+    // Update copyright year
+    const currentYear = new Date().getFullYear();
+    const copyrightYear = document.querySelector('.copyright-year');
+    if (copyrightYear) {
+        copyrightYear.textContent = currentYear;
+    }
 }); 
