@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
@@ -62,6 +62,16 @@ nav {
 
 .menu a {
     position: relative;
+    transition: color 0.3s ease;
+    font-weight: 300;
+}
+
+.social-icon {
+    vertical-align: middle;
+}
+
+.menu a:hover .social-icon {
+    content: url("../images/linkedin-yellow.png");
 }
 
 .menu a.active::after {
@@ -75,7 +85,11 @@ nav {
 }
 
 .menu a:hover {
-    color: #ffeb3b;
+    color: #FFD700;
+}
+
+.menu a.active:hover::after {
+    background-color: #FFD700;
 }
 
 .menu a:not(.active):hover::after {
