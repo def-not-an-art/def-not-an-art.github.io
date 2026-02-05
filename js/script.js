@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const thanksModal = document.querySelector('#contact-thanks');
     const modalClose = thanksModal ? thanksModal.querySelector('.modal-close') : null;
     const modalBackdrop = thanksModal ? thanksModal.querySelector('.modal-backdrop') : null;
+    const modalTitle = thanksModal ? thanksModal.querySelector('#contact-thanks-title') : null;
+    const modalMessage = thanksModal ? thanksModal.querySelector('p') : null;
+    const submitButton = contactForm ? contactForm.querySelector('.submit-btn') : null;
 
     const closeThanksModal = () => {
         if (!thanksModal) {
@@ -61,14 +64,64 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
+        contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
             if (!contactForm.reportValidity()) {
                 return;
             }
 
-            openThanksModal();
-            contactForm.reset();
+            const endpoint = contactForm.dataset.endpoint;
+            if (!endpoint || endpoint.includes('REPLACE_WITH_YOUR_SCRIPT_ID')) {
+                if (modalTitle) {
+                    modalTitle.textContent = 'Setup needed';
+                }
+                if (modalMessage) {
+                    modalMessage.textContent = 'Add your Google Sheets endpoint to enable sending.';
+                }
+                openThanksModal();
+                return;
+            }
+
+            const payload = {
+                name: contactForm.querySelector('#name')?.value || '',
+                email: contactForm.querySelector('#email')?.value || '',
+                message: contactForm.querySelector('#message')?.value || '',
+            };
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+
+            try {
+                await fetch(endpoint, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload),
+                });
+
+                if (modalTitle) {
+                    modalTitle.textContent = 'Thanks';
+                }
+                if (modalMessage) {
+                    modalMessage.textContent = "I'll replay shortly";
+                }
+                openThanksModal();
+                contactForm.reset();
+            } catch (error) {
+                if (modalTitle) {
+                    modalTitle.textContent = 'Sorry';
+                }
+                if (modalMessage) {
+                    modalMessage.textContent = 'Something went wrong. Please try again.';
+                }
+                openThanksModal();
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send';
+                }
+            }
         });
     }
 
