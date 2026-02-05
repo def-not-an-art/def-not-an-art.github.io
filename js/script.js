@@ -37,4 +37,46 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyrightYear) {
         copyrightYear.textContent = currentYear;
     }
+
+    // Show thank-you dialog on contact form submit
+    const contactForm = document.querySelector('.contact-form form');
+    const thanksModal = document.querySelector('#contact-thanks');
+    const modalClose = thanksModal ? thanksModal.querySelector('.modal-close') : null;
+    const modalBackdrop = thanksModal ? thanksModal.querySelector('.modal-backdrop') : null;
+
+    const closeThanksModal = () => {
+        if (!thanksModal) {
+            return;
+        }
+        thanksModal.classList.remove('is-open');
+        thanksModal.setAttribute('aria-hidden', 'true');
+    };
+
+    const openThanksModal = () => {
+        if (!thanksModal) {
+            return;
+        }
+        thanksModal.classList.add('is-open');
+        thanksModal.setAttribute('aria-hidden', 'false');
+    };
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+            openThanksModal();
+            contactForm.reset();
+        });
+    }
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeThanksModal);
+    }
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeThanksModal);
+    }
 }); 

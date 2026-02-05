@@ -249,6 +249,22 @@ nav {
     margin: 0 auto;
 }
 
+.contact-illustration {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-illustration img {
+    width: 100%;
+    max-width: 416px;
+}
+
+.contact-form {
+    max-width: 912px;
+    margin: 0 auto 0 0;
+    margin-top: 10%;
+}
+
 .contact-info h2,
 .contact-form h2 {
     margin-bottom: 1.5rem;
@@ -282,9 +298,14 @@ nav {
     margin-bottom: 0.5rem;
 }
 
+.field-required {
+    font-size: 0.875rem;
+    color: #777;
+}
+
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 120%;
     padding: 0.75rem;
     border: 1px solid #ddd;
     font-family: inherit;
@@ -303,6 +324,47 @@ nav {
 
 .submit-btn:hover {
     background-color: #555;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.modal.is-open {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+    max-width: 420px;
+    width: 90%;
+    border: 1px solid #ddd;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    z-index: 1;
+}
+
+.modal-content h2 {
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
 }
 
 /* Footer */

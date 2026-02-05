@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Jekaterina Kaibagarova</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,73 +20,59 @@
                 <li><a href="index.html">Work</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/j-kaibagarova/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/iamanillustratornow/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="contact-page">
-            <h1 class="page-title">Contact</h1>
-            
             <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>For commissions, collaborations, or inquiries, please use the contact form or reach out directly:</p>
-                    
-                    <ul class="contact-details">
-                        <li>
-                            <strong>Email:</strong>
-                            <a href="mailto:info@example.com">info@example.com</a>
-                        </li>
-                        <li>
-                            <strong>Location:</strong>
-                            [City, Country]
-                        </li>
-                        <li>
-                            <strong>Social Media:</strong>
-                            <div class="social-links">
-                                <a href="#" target="_blank">Instagram</a>
-                                <a href="#" target="_blank">Behance</a>
-                                <a href="#" target="_blank">LinkedIn</a>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="contact-illustration">
+                    <img src="images/lets-work-together.gif" alt="Let's work together">
                 </div>
-                
                 <div class="contact-form">
-                    <h2>Contact Form</h2>
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name">
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">
+                                Email <span class="field-required">(required)</span>
+                            </label>
                             <input type="email" id="email" name="email" required>
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">
+                                Message <span class="field-required">(required)</span>
+                            </label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
+
+                        <button type="submit" class="submit-btn">Send</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
+    <div class="modal" id="contact-thanks" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="contact-thanks-title">
+            <h2 id="contact-thanks-title">Thanks</h2>
+            <p>I'll replay shortly</p>
+            <button type="button" class="submit-btn modal-close">Close</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; <span class="copyright-year">2023</span> Jekaterina Kaibagarova. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=2"></script>
 </body>
 </html> 
