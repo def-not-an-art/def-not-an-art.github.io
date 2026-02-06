@@ -409,6 +409,15 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .contact-form {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-form form {
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) {
@@ -435,6 +444,20 @@ footer {
     .menu-toggle {
         display: block;
         z-index: 101;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-form form {
+        text-align: left;
     }
 }
 
