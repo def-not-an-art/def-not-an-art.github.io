@@ -6,6 +6,10 @@
     <title>Christmas Land - Jekaterina Kaibagarova</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .project-showcase {
             margin: 0 auto;
         }
@@ -28,9 +32,44 @@
         
         .project-description {
             max-width: 800px;
-            margin: 2rem auto;
+            margin: 4rem auto;
             line-height: 1.8;
             padding: 0 2rem;
+            text-align: center;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .wallpaper-section {
+            display: flex;
+            gap: 4rem;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        .wallpaper-image {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            display: block;
+        }
+
+        .wallpaper-text {
+            max-width: 360px;
+            line-height: 1.8;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #1e2d4d;
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            margin-top: 1.5rem;
         }
         
         .back-to-work {
@@ -45,6 +84,18 @@
             background-color: #333;
             color: #fff;
         }
+
+        @media (max-width: 992px) {
+            .wallpaper-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .wallpaper-text {
+                max-width: 520px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -58,20 +109,37 @@
                 <li><a href="index.html" class="active">Work</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/j-kaibagarova/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/iamanillustratornow/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="project-showcase">
-            <img src="images/christmas-land-animated.gif" alt="Christmas Land" class="full-width-image">
-            
+            <img src="https://images.squarespace-cdn.com/content/v1/5e2a18d88c17df03d57811e7/1580231571971-00WUX35MIA82Z57KTITS/2+pic+top+bot-01.jpg" alt="2 pic top bot-01" class="full-width-image">
+
             <div class="project-description">
-                <p>Christmas Land is a project exploring the intersection of holiday themes and marine life. This piece showcases the vibrant colors and textures found in underwater scenes during the festive season.</p>
-                
-                <p>Created using [technique/medium], this work demonstrates [artistic elements or techniques].</p>
-                
-                <a href="index.html" class="back-to-work">Back to Work</a>
+                <h1 class="project-title">Christmas Land</h1>
+                <p>Christmas Land is an animated illustration /Christmas greeting card.</p>
+
+                <p>it is also available as a smartphone wallpaper.</p>
+            </div>
+
+            <img src="https://images.squarespace-cdn.com/content/v1/5e2a18d88c17df03d57811e7/1580226407445-7DOKWNSU32V4TRU3AJIW/ezgif-5-37b6ab139d7f.gif" alt="Christmas Land animation" class="full-width-image">
+
+            <div class="wallpaper-section">
+                <img src="images/Christmas+Land+Wallpaper-phone.webp" alt="Christmas Land Wallpaper phone" class="wallpaper-image">
+                <div class="wallpaper-text">
+                    <p>Feel free to download and use this illustration as your mobile wallpaper.</p>
+                    <a href="images/christmas-land-wallpaper.jpg" class="download-btn" download>Free Download</a>
+                </div>
+            </div>
+
+            <img src="images/christmal-land-bottom.webp" alt="2 pic top bot-02" class="full-width-image">
+
+            <div class="project-description">
+                <a href="spaghetti-pencil.html" class="back-to-work">Next: Spaghetti Pencil</a>
             </div>
         </section>
     </main>
