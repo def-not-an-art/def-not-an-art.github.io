@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const GA_MEASUREMENT_ID = 'G-7186HP5JF1';
+
+    const initAnalytics = () => {
+        if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.includes('X')) {
+            return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+            window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: true });
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(script);
+    };
+
+    const trackEvent = (name, params) => {
+        if (typeof window.gtag !== 'function') {
+            return;
+        }
+        window.gtag('event', name, params);
+    };
+
+    initAnalytics();
+
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
 
@@ -32,6 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (menuToggle) {
                 menuToggle.setAttribute('aria-label', 'Open Menu');
             }
+
+            trackEvent('nav_click', {
+                label: item.textContent.trim(),
+                href: item.href,
+            });
+        });
+    });
+
+    const workLinks = document.querySelectorAll('.portfolio-item a');
+    workLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const title = link.querySelector('h3')?.textContent.trim() || link.textContent.trim();
+            trackEvent('work_open', {
+                title,
+                href: link.href,
+            });
         });
     });
     
