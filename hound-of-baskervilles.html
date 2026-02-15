@@ -6,44 +6,113 @@
     <title>The Hound of the Baskervilles - Jekaterina Kaibagarova</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .project-showcase {
             margin: 0 auto;
         }
-        
-        .project-showcase h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 2rem;
-        }
-        
+
         .full-width-image {
             width: 100%;
             height: auto;
             display: block;
             margin: 0;
             padding: 0;
-            aspect-ratio: 5/4;
-            object-fit: cover;
         }
-        
+
         .project-description {
-            max-width: 800px;
-            margin: 2rem auto;
+            max-width: 860px;
+            margin: 3rem auto;
             line-height: 1.8;
             padding: 0 2rem;
+            text-align: center;
         }
-        
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .project-navigation {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            width: 100vw;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 1.56rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            gap: 1.5rem;
+        }
         .back-to-work {
-            margin-top: 3rem;
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-work:hover {
-            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: 0;
+        }
+        .back-to-work:hover {
+            opacity: 0.8;
+        }
+
+        .project-navigation .back-to-work::before,
+        .project-navigation .back-to-work::after {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            transform: translateY(-0.03em);
+        }
+
+        .project-navigation .back-to-work:first-child:not(:last-child)::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child) {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child)::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-navigation {
+                padding: 1.3rem 1.1rem;
+                margin-top: 0;
+                margin-bottom: 3rem;
+                gap: 1rem;
+            }
+
+            .back-to-work {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -66,15 +135,15 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/dog-landing.png" alt="The Hound of the Baskervilles" class="full-width-image">
-            
+            <img src="images/hound-of-baskervilles-01.jpg" alt="The Hound of the Baskervilles image 1" class="full-width-image">
+
             <div class="project-description">
-                <h1>The Hound of the Baskervilles</h1>
-                <p>This illustration is inspired by Sir Arthur Conan Doyle's classic Sherlock Holmes novel "The Hound of the Baskervilles." The artwork captures the eerie atmosphere of the story, with its mysterious canine antagonist and gothic moorland setting.</p>
-                
-                <p>Through dramatic lighting and composition, the piece evokes the suspense and supernatural elements of the tale while paying homage to one of literature's most enduring detective stories and its haunting imagery.</p>
-                
-                <a href="index.html" class="back-to-work">Back to Work</a>
+                <h1 class="project-title">The Hound of the Baskervilles</h1>
+                <p>This illustration is inspired by famous novels of Arthur Conan Doyle.</p>
+            </div>
+            <div class="project-navigation">
+                    <a href="summer-camp.html" class="back-to-work">Summer Camp</a>
+                    <a href="illustrations-for-pukainis.html" class="back-to-work">Illustrations for Pūkainis</a>
             </div>
         </section>
     </main>
@@ -85,4 +154,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>

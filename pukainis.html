@@ -6,44 +6,155 @@
     <title>Pūkainis - Jekaterina Kaibagarova</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .project-showcase {
             margin: 0 auto;
         }
-        
-        .project-showcase h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 2rem;
-        }
-        
+
         .full-width-image {
             width: 100%;
             height: auto;
             display: block;
             margin: 0;
             padding: 0;
-            aspect-ratio: 5/4;
-            object-fit: cover;
         }
-        
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: rgba(0, 0, 0, 0.45);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            line-height: 1;
+            z-index: 2;
+        }
+
+        .carousel-btn.prev {
+            left: 12px;
+        }
+
+        .carousel-btn.next {
+            right: 12px;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.65);
+        }
+
         .project-description {
-            max-width: 800px;
-            margin: 2rem auto;
+            max-width: 860px;
+            margin: 3rem auto;
             line-height: 1.8;
             padding: 0 2rem;
+            text-align: center;
         }
-        
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .project-navigation {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            width: 100vw;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 1.56rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            gap: 1.5rem;
+        }
         .back-to-work {
-            margin-top: 3rem;
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-work:hover {
-            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: 0;
+        }
+        .back-to-work:hover {
+            opacity: 0.8;
+        }
+
+        .project-navigation .back-to-work::before,
+        .project-navigation .back-to-work::after {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            transform: translateY(-0.03em);
+        }
+
+        .project-navigation .back-to-work:first-child:not(:last-child)::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child) {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child)::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-navigation {
+                padding: 1.3rem 1.1rem;
+                margin-top: 0;
+                margin-bottom: 3rem;
+                gap: 1rem;
+            }
+
+            .back-to-work {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -66,15 +177,31 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/pukainis-landing.jpg" alt="Pūkainis" class="full-width-image">
-            
+            <div class="carousel" id="pukainis-top-carousel">
+                <img src="images/pukainis-01.jpg" alt="Pūkainis image 1" class="full-width-image carousel-slide active">
+                <img src="images/pukainis-02.jpg" alt="Pūkainis image 2" class="full-width-image carousel-slide">
+                <img src="images/pukainis-03.jpg" alt="Pūkainis image 3" class="full-width-image carousel-slide">
+                <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+            </div>
+            <img src="images/pukainis-04.jpg" alt="Pūkainis image 4" class="full-width-image">
+            <img src="images/pukainis-05.jpg" alt="Pūkainis image 5" class="full-width-image">
+            <img src="images/pukainis-06.jpg" alt="Pūkainis image 6" class="full-width-image">
+
             <div class="project-description">
-                <h1>Pūkainis</h1>
-                <p>Pūkainis is a character-driven illustration project inspired by Latvian folklore and cultural elements. The name, which suggests something fluffy or fuzzy, embodies the whimsical and warm nature of this creation.</p>
-                
-                <p>This work blends traditional cultural motifs with contemporary design sensibilities, creating a character that resonates with both nostalgia and modern aesthetic appeal.</p>
-                
-                <a href="index.html" class="back-to-work">Back to Work</a>
+                <h1 class="project-title">Pūkainis logo</h1>
+                <p>This logo is created for a <em>Pūkainis.lv</em> charity project's merchandise brand.</p>
+                <p>The brand offers cotton t-shirts with unique artistic prints that all pet owners and animal welfare enthusiasts would like.</p>
+                <p>All profit generated through the sale of t-shirts is donated to charity projects such as <em>Pūkainis.lv</em> and <em>Cat Care Community</em>.</p>
+            </div>
+
+            <img src="images/pukainis-07.jpg" alt="Pūkainis image 7" class="full-width-image">
+            <img src="images/pukainis-08.jpg" alt="Pūkainis image 8" class="full-width-image">
+            <img src="images/pukainis-09.jpg" alt="Pūkainis image 9" class="full-width-image">
+            <img src="images/pukainis-10.jpg" alt="Pūkainis image 10" class="full-width-image">
+            <div class="project-navigation">
+                    <a href="personal-logo.html" class="back-to-work">Personal logo</a>
+                    <a href="grand-budapest-hotel.html" class="back-to-work">The Grand Budapest Hotel</a>
             </div>
         </section>
     </main>
@@ -84,5 +211,32 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        (function () {
+            const carousel = document.getElementById("pukainis-top-carousel");
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+            const prevBtn = carousel.querySelector(".carousel-btn.prev");
+            const nextBtn = carousel.querySelector(".carousel-btn.next");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === index);
+                });
+            }
+
+            prevBtn.addEventListener("click", function () {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            });
+
+            nextBtn.addEventListener("click", function () {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            });
+        })();
+    </script>
 </body>
-</html> 
+</html>

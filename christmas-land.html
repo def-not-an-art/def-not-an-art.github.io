@@ -71,19 +71,79 @@
             padding: 0.9rem 2.5rem;
             margin-top: 1.5rem;
         }
-        
+        .project-navigation {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            width: 100vw;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 1.56rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            gap: 1.5rem;
+        }
+
+        .project-navigation.single-nav {
+            justify-content: flex-end;
+        }
+
         .back-to-work {
-            margin-top: 3rem;
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-work:hover {
-            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: 0;
         }
+        .back-to-work:hover {
+            opacity: 0.8;
+        }
+
+        .project-navigation .back-to-work::before,
+        .project-navigation .back-to-work::after {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            transform: translateY(-0.03em);
+        }
+
+        .project-navigation .back-to-work:first-child:not(:last-child)::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child) {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child)::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation.single-nav .back-to-work::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
 
         @media (max-width: 992px) {
             .wallpaper-section {
@@ -94,6 +154,19 @@
 
             .wallpaper-text {
                 max-width: 520px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-navigation {
+                padding: 1.3rem 1.1rem;
+                margin-top: 0;
+                margin-bottom: 3rem;
+                gap: 1rem;
+            }
+
+            .back-to-work {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -138,8 +211,8 @@
 
             <img src="images/christmal-land-bottom.webp" alt="2 pic top bot-02" class="full-width-image">
 
-            <div class="project-description">
-                <a href="spaghetti-pencil.html" class="back-to-work">Next: Spaghetti Pencil</a>
+            <div class="project-navigation single-nav">
+                <a href="spaghetti-pencil.html" class="back-to-work">Spaghetti Pencil</a>
             </div>
         </section>
     </main>

@@ -6,44 +6,127 @@
     <title>Hoopoe - Jekaterina Kaibagarova</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .project-showcase {
             margin: 0 auto;
         }
-        
-        .project-showcase h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 2rem;
-        }
-        
+
         .full-width-image {
             width: 100%;
             height: auto;
             display: block;
             margin: 0;
             padding: 0;
-            aspect-ratio: 5/4;
-            object-fit: cover;
         }
-        
+
         .project-description {
-            max-width: 800px;
-            margin: 2rem auto;
-            line-height: 1.8;
+            max-width: 720px;
+            margin: 5rem auto 3.5rem;
+            line-height: 1.9;
             padding: 0 2rem;
+            text-align: center;
         }
-        
+
+        .project-title {
+            font-size: 1.95rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .project-description p {
+            margin: 0 0 1.4rem;
+        }
+
+        .project-description p:last-child {
+            margin-bottom: 0;
+        }
+        .project-navigation {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            width: 100vw;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 1.56rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            gap: 1.5rem;
+        }
         .back-to-work {
-            margin-top: 3rem;
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-work:hover {
-            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: 0;
+        }
+        .back-to-work:hover {
+            opacity: 0.8;
+        }
+
+        .project-navigation .back-to-work::before,
+        .project-navigation .back-to-work::after {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            transform: translateY(-0.03em);
+        }
+
+        .project-navigation .back-to-work:first-child:not(:last-child)::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child) {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child)::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+
+        @media (max-width: 768px) {
+            .project-description {
+                margin: 3.5rem auto 2.25rem;
+                line-height: 1.8;
+            }
+
+            .project-navigation {
+                padding: 1.3rem 1.1rem;
+                margin-top: 0;
+                margin-bottom: 3.5rem;
+                gap: 1rem;
+            }
+
+            .back-to-work {
+                font-size: 1.3rem;
+            }
+
+            .project-title {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -66,15 +149,22 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/hoppoe-cards-landing.jpg" alt="Hoopoe" class="full-width-image">
-            
             <div class="project-description">
-                <h1>Hoopoe</h1>
-                <p>Hoopoe is an artistic exploration inspired by the distinctive and colorful bird species known for its striking appearance and crown of feathers. This project captures the elegant essence and vibrant character of the hoopoe bird.</p>
-                
-                <p>This work showcases the intricate details and natural beauty of these remarkable creatures, rendered with careful attention to both artistic expression and ornithological accuracy.</p>
-                
-                <a href="index.html" class="back-to-work">Back to Work</a>
+                <h1 class="project-title">100th anniversary of The National Library of Latvia</h1>
+                <p><em>The National Library of Latvia (NLL)</em> is the largest Latvian library and the main memory institution in the country. The core functions of the NLL are the collection of national literature, its perpetual storage and the long-term provision of access to it.</p>
+                <p><strong>In 2019, the NLL celebrates its centenary.</strong></p>
+                <p>The hoopoe <em>(Upupa epops)</em> - a gorgeous bird, also found in Latvia, has been chosen as the emissary of the Library's anniversary.</p>
+                <p>This colourful illustration is dedicated to the centenary of the NLL.</p>
+            </div>
+
+            <img src="images/hoopoe-01.jpg" alt="Hoopoe image 1" class="full-width-image">
+            <img src="images/hoopoe-02.jpg" alt="Hoopoe image 2" class="full-width-image">
+            <img src="images/hoopoe-03.jpg" alt="Hoopoe image 3" class="full-width-image">
+            <img src="images/hoopoe-04.jpg" alt="Hoopoe image 4" class="full-width-image">
+
+            <div class="project-navigation">
+                <a href="spaghetti-pencil.html" class="back-to-work">Spaghetti Pencil</a>
+                <a href="city-of-red-bricks.html" class="back-to-work">The City of Red Bricks</a>
             </div>
         </section>
     </main>
@@ -85,4 +175,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>

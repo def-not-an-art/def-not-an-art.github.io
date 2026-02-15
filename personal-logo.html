@@ -3,47 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Logo - Jekaterina Kaibagarova</title>
+    <title>Personal logo - Jekaterina Kaibagarova</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
+        }
+
         .project-showcase {
             margin: 0 auto;
         }
-        
-        .project-showcase h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 2rem;
-        }
-        
+
         .full-width-image {
             width: 100%;
             height: auto;
             display: block;
             margin: 0;
             padding: 0;
-            aspect-ratio: 5/4;
-            object-fit: cover;
         }
-        
+
         .project-description {
-            max-width: 800px;
-            margin: 2rem auto;
+            max-width: 860px;
+            margin: 3rem auto;
             line-height: 1.8;
             padding: 0 2rem;
+            text-align: center;
         }
-        
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .project-navigation {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            width: 100vw;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+            margin-top: 0;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 1.56rem 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            gap: 1.5rem;
+        }
         .back-to-work {
-            margin-top: 3rem;
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-work:hover {
-            background-color: #333;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            min-width: 0;
+        }
+        .back-to-work:hover {
+            opacity: 0.8;
+        }
+
+        .project-navigation .back-to-work::before,
+        .project-navigation .back-to-work::after {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            transform: translateY(-0.03em);
+        }
+
+        .project-navigation .back-to-work:first-child:not(:last-child)::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child) {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .project-navigation .back-to-work:last-child:not(:first-child)::after {
+            content: "\203A";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-navigation {
+                padding: 1.3rem 1.1rem;
+                margin-top: 0;
+                margin-bottom: 3rem;
+                gap: 1rem;
+            }
+
+            .back-to-work {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -66,15 +135,19 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/personal-logo-notebook-landing.jpg" alt="Personal Logo" class="full-width-image">
-            
+            <img src="images/personal-logo-01.jpg" alt="Personal logo image 1" class="full-width-image">
+            <img src="images/personal-logo-02.gif" alt="Personal logo image 2" class="full-width-image">
+
             <div class="project-description">
-                <h1>Personal Logo</h1>
-                <p>This personal logo project showcases the development of a unique visual identity. The design reflects my artistic style and professional approach, embodying the essence of my creative vision.</p>
-                
-                <p>Through thoughtful typography and symbolic elements, this logo serves as both a signature and a statement, representing my work across various platforms and media.</p>
-                
-                <a href="index.html" class="back-to-work">Back to Work</a>
+                <h1 class="project-title">Personal logo</h1>
+                <p>This personal logo is a combination of the letter J and the illustration of a pencil. The elements of the logo create an outline of the author’s initials “JK”.</p>
+            </div>
+
+            <img src="images/personal-logo-03.jpg" alt="Personal logo image 3" class="full-width-image">
+            <img src="images/personal-logo-04.jpg" alt="Personal logo image 4" class="full-width-image">
+            <div class="project-navigation">
+                    <a href="sentinel.html" class="back-to-work">Sentinel</a>
+                    <a href="pukainis.html" class="back-to-work">Pūkainis</a>
             </div>
         </section>
     </main>
@@ -85,4 +158,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
