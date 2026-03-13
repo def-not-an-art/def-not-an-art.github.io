@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 /* Reset styles */
 * {
     margin: 0;
@@ -39,6 +41,14 @@ header {
     z-index: 100;
 }
 
+header,
+nav,
+.menu,
+.menu a,
+.menu-toggle {
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 500;
@@ -64,6 +74,8 @@ nav {
     position: relative;
     transition: color 0.3s ease;
     font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .social-icon {
