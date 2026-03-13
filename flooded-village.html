@@ -35,6 +35,47 @@
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
+
+        .wallpaper-section {
+            display: flex;
+            gap: 4rem;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        .wallpaper-image {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            display: block;
+        }
+
+        .wallpaper-download {
+            max-width: 360px;
+            line-height: 1.8;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            line-height: 1;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .download-btn:hover {
+            opacity: 0.8;
+        }
+
         .project-navigation {
             position: relative;
             left: 50%;
@@ -103,6 +144,17 @@
                 font-size: 2rem;
             }
 
+            .wallpaper-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .wallpaper-download {
+                text-align: center;
+            }
+
             .project-navigation {
                 padding: 1.3rem 1.1rem;
                 margin-top: 0;
@@ -135,14 +187,21 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/flooded-village-01.jpg" alt="Flooded Village image 1" class="full-width-image">
-            <img src="images/flooded-village-02.gif" alt="Flooded Village image 2" class="full-width-image">
-            <img src="images/flooded-village-03.jpg" alt="Flooded Village image 3" class="full-width-image">
-            <img src="images/flooded-village-04.jpg" alt="Flooded Village image 4" class="full-width-image">
-
             <div class="project-description">
                 <h1 class="project-title">Flooded Village</h1>
                 <p>An animated digital illustration.</p>
+            </div>
+
+            <img src="images/flooded-village-01.jpg" alt="Flooded Village image 1" class="full-width-image">
+            <img src="images/flooded-village-02.gif" alt="Flooded Village image 2" class="full-width-image">
+            <img src="images/flooded-village-03.jpg" alt="Flooded Village image 3" class="full-width-image">
+
+            <div class="wallpaper-section">
+                <img src="images/Wallpaper-flood.jpg" alt="Flooded Village wallpaper" class="wallpaper-image">
+                <div class="wallpaper-download">
+                    <p>Feel free to download and use this illustration as your mobile wallpaper.</p>
+                    <a href="images/Wallpaper-flood.jpg" class="download-btn" download="Wallpaper-flood.jpg">Free Download</a>
+                </div>
             </div>
             <div class="project-navigation">
                     <a href="grand-budapest-hotel.html" class="back-to-work">The Grand Budapest Hotel</a>

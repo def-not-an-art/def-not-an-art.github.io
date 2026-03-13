@@ -35,6 +35,12 @@
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
         .project-navigation {
             position: relative;
             left: 50%;
@@ -97,6 +103,16 @@
             line-height: 1;
         }
 
+        .project-navigation.single-nav {
+            justify-content: flex-start;
+        }
+
+        .project-navigation.single-nav .back-to-work::before {
+            content: "\2039";
+            font-size: 3rem;
+            line-height: 1;
+        }
+
 
         @media (max-width: 768px) {
             .project-title {
@@ -135,16 +151,22 @@
 
     <main>
         <section class="project-showcase">
-            <img src="images/illustrations-for-pukainis-01.jpg" alt="Illustrations for Pūkainis image 1" class="full-width-image">
-            <img src="images/illustrations-for-pukainis-02.png" alt="Illustrations for Pūkainis image 2" class="full-width-image">
-            <img src="images/illustrations-for-pukainis-03.png" alt="Illustrations for Pūkainis image 3" class="full-width-image">
-            <img src="images/illustrations-for-pukainis-04.png" alt="Illustrations for Pūkainis image 4" class="full-width-image">
-
             <div class="project-description">
                 <h1 class="project-title">Illustrations for Pūkainis</h1>
-
+                <p>The illustrations were created for the <em>Pūkainis</em> clothing brand.</p>
+                <p><em>Pūkainis</em> was founded by animal welfare enthusiasts for people who adore their four-legged friends.</p>
+                <p>The brand collaborates with independent artists and illustrators, and all garments are made from high-quality 100% cotton.</p>
+                <p>Profits from t-shirt sales support charity initiatives such as <em>Pūkainis.lv</em> and <em>Cat Care Community</em>.</p>
             </div>
-            <div class="project-navigation">
+
+            <div class="project-description">
+                <h2 class="section-subtitle">Kids illustration</h2>
+            </div>
+
+            <img src="images/illustrations-for-pukainis-04.png" alt="Kids illustration for Pūkainis 1" class="full-width-image">
+            <img src="images/illustrations-for-pukainis-03.png" alt="Kids illustration for Pūkainis 2" class="full-width-image">
+            <img src="images/illustrations-for-pukainis-02.png" alt="Kids illustration for Pūkainis 3" class="full-width-image">
+            <div class="project-navigation single-nav">
                     <a href="hound-of-baskervilles.html" class="back-to-work">The Hound of the Baskervilles</a>
             </div>
         </section>
