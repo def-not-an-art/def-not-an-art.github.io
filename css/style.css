@@ -396,10 +396,16 @@ nav {
 
 /* Footer */
 footer {
-    padding: 2rem;
+    padding: 2rem 2rem 115px;
     text-align: center;
     font-size: 0.875rem;
     color: #777;
+}
+
+.footer-illustration {
+    width: 158px;
+    height: auto;
+    margin: 0 auto;
 }
 
 /* Responsive design */
